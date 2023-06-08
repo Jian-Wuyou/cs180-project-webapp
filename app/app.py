@@ -1,14 +1,22 @@
+import os
+
 from dotenv import load_dotenv
 from flask import Flask, render_template, request
 
 from app.prediction_model import Model, feature_cols, response_col
 
+# Set the cwd to the location of app.py
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
+# Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
 app.config.from_prefixed_env()
 
-with open("../Sleep_Efficiency.csv") as f:
+with open("./Sleep_Efficiency.csv") as f:
     model = Model(f.read())
 
 
