@@ -1,0 +1,8 @@
+{
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": false,
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "python.formatting.blackPath": "${workspaceFolder}\\venv\\Scripts\\black.exe",
+}
